@@ -27,6 +27,7 @@ export default function Root() {
                     <form method="post">
                         <button type="submit">New</button>
                     </form>
+
                 </div>
                 <nav>
                     <ul>
@@ -39,7 +40,8 @@ export default function Root() {
                     </ul>
                 </nav>
             </div>
-            <div id="detail"></div>
+
+            <div id="detail"><Outlet /></div>
         </>
     );
 }
