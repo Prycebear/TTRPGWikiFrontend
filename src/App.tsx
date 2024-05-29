@@ -8,6 +8,7 @@ import Home from "./Pages/Home/Home.tsx";
 
 import Character from "./Pages/Character/Character.tsx";
 import Root from "./Root.tsx";
+import {CharacterdetailPage} from "./Pages/Character/CharacterDetailPage.tsx";
 
 
 
@@ -27,8 +28,13 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       {
-        path: "/character",
+        path: "/characters",
         element:<Character/>,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/character",
+        element:<CharacterdetailPage/>,
         errorElement: <ErrorPage />,
       },
       {
@@ -43,8 +49,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  // const [count, setCount] = useState(0)
-  //   const [rando, setRando] = useState(Math.round(Math.random()*10))
+
 
   return (
     <>

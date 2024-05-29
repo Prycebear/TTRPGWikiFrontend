@@ -1,6 +1,8 @@
 import { Outlet, Link } from "react-router-dom";
+import Character from "./Pages/Character/Character.tsx";
 
 export default function Root() {
+    const starterURL = "http://localhost:8080/"
     return (
         <>
             <div id="sidebar">
