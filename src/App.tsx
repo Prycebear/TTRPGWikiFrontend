@@ -5,10 +5,9 @@ import {
 } from "react-router-dom";
 import ErrorPage from "./Pages/Error/ErrorPage.tsx";
 import Home from "./Pages/Home/Home.tsx";
-
-import Character from "./Pages/Character/Character.tsx";
 import Root from "./Root.tsx";
-import {CharacterdetailPage} from "./Pages/Character/CharacterDetailPage.tsx";
+import CharacterCards from "./Pages/Character/CharacterCards.tsx";
+import CharacterCard from "./Pages/Character/CharacterCard.tsx";
 
 
 
@@ -29,12 +28,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/characters",
-        element:<Character/>,
+        element:<CharacterCards/>,
         errorElement: <ErrorPage />,
       },
       {
         path: "/character",
-        element:<CharacterdetailPage/>,
+        element:<CharacterCards/>,
         errorElement: <ErrorPage />,
       },
       {
