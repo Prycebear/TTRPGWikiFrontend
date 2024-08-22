@@ -6,8 +6,12 @@ import {
 import ErrorPage from "./Pages/Error/ErrorPage.tsx";
 import Home from "./Pages/Home/Home.tsx";
 import Root from "./Root.tsx";
-import CharacterCards from "./Pages/Character/CharacterCards.tsx";
-import CharacterCard from "./Pages/Character/CharacterCard.tsx";
+import ContinentCards from "./Pages/World/ContinentCards.tsx";
+import WeaponCards from "./Pages/Items/WeaponCards.tsx";
+import GroupCards from "./Pages/Groups/GroupCards.tsx";
+import GodCards from "./Pages/Gods/GodCards.tsx";
+import DataCardPage from "./Pages/DataCardPage/DataCardPage.tsx";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -18,8 +22,9 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "homes",
-        element: <Home/>,
+        path: "/",
+        element:<Home/>,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/home",
@@ -28,14 +33,52 @@ const router = createBrowserRouter([
       },
       {
         path: "/characters",
-        element:<CharacterCards/>,
+        element:<DataCardPage/>,
         errorElement: <ErrorPage />,
       },
       {
         path: "/character",
-        element:<CharacterCards/>,
+        element:<DataCardPage/>,
         errorElement: <ErrorPage />,
       },
+      {
+        path: "/world",
+        element:<ContinentCards/>,
+        errorElement: <ErrorPage />,
+      }
+      ,
+      {
+        path: "/race",
+        element:<DataCardPage/>,
+        errorElement: <ErrorPage />,
+      }
+      ,
+      {
+        path: "/items",
+        element:<ErrorPage/>,
+        errorElement: <ErrorPage />,
+        children:[
+          {
+            path: "/items/weapon",
+            element:<WeaponCards/>,
+            errorElement: <ErrorPage />,
+          }
+        ]
+      }
+      ,
+      {
+        path: "/groups",
+        element:<GroupCards/>,
+        errorElement: <ErrorPage />,
+      }
+      ,
+      {
+        path: "/gods",
+        element:<GodCards/>,
+        errorElement: <ErrorPage />,
+      }
+      ,
+
       {
         path: "/error",
         element:<ErrorPage/>,
