@@ -6,12 +6,14 @@ import {
 import ErrorPage from "./Pages/Error/ErrorPage.tsx";
 import Home from "./Pages/Home/Home.tsx";
 import Root from "./Root.tsx";
-import ContinentCards from "./Pages/World/ContinentCards.tsx";
-import WeaponCards from "./Pages/Items/WeaponCards.tsx";
-import GroupCards from "./Pages/Groups/GroupCards.tsx";
-import GodCards from "./Pages/Gods/GodCards.tsx";
+import ContinentCards from "./Pages/DataPages/World/ContinentCards.tsx";
+import GroupCards from "./Pages/DataPages/Groups/GroupCards.tsx";
+import GodCards from "./Pages/DataPages/Gods/GodCards.tsx";
 import DataCardPage from "./Pages/DataCardPage/DataCardPage.tsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CampaignPage from "./Pages/DataPages/Campaign/CampaignPage.tsx";
+import CharacterCards from "./Pages/DataPages/Character/CharacterCards.tsx";
+import BasicDataOutline from "./Pages/BasicDataCards/BasicCardOutline.tsx";
 
 
 
@@ -32,8 +34,13 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       {
+        path: "/campaigns",
+        element:<CampaignPage/>,
+        errorElement: <ErrorPage />,
+      },
+      {
         path: "/characters",
-        element:<DataCardPage/>,
+        element:<CharacterCards/>,
         errorElement: <ErrorPage />,
       },
       {
@@ -49,18 +56,18 @@ const router = createBrowserRouter([
       ,
       {
         path: "/race",
-        element:<DataCardPage/>,
+        element:<BasicDataOutline/>,
         errorElement: <ErrorPage />,
       }
       ,
       {
         path: "/items",
-        element:<ErrorPage/>,
+        element:<DataCardPage/>,
         errorElement: <ErrorPage />,
         children:[
           {
-            path: "/items/weapon",
-            element:<WeaponCards/>,
+            path: "weapon",
+            element:<DataCardPage/>,
             errorElement: <ErrorPage />,
           }
         ]

@@ -9,17 +9,17 @@ export default function Root() {
 
     return (
         <>
-            <div className="route-outlet">
-            <Navbar expand="sm" className="bg-body-tertiary" style={{position: "sticky"}}   >
+            <div className="route-outlet" style={{zIndex: '100'}}>
+            <Navbar expand="xl" className="bg-body-tertiary" style={{position: "sticky", zIndex: '100'}}   >
                 <Container>
                     <Navbar.Brand href="/home">Avorlion</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto" >
                             <Nav.Link href={`/home`}>Home</Nav.Link>
-                            <Nav.Link href={`/home`}>Campaigns</Nav.Link>
+                            <Nav.Link href={`/campaigns`}>Campaigns</Nav.Link>
 
-                            <NavDropdown title="The World" id="basic-nav-dropdown" >
+                            <NavDropdown title="The World" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="/world">History</NavDropdown.Item>
                                 <NavDropdown.Item href="/world">Continents</NavDropdown.Item>
                                 <NavDropdown.Item href="/world">Nations</NavDropdown.Item>
@@ -35,7 +35,7 @@ export default function Root() {
                                     New Location
                                 </NavDropdown.Item>
                             </NavDropdown>
-                            <NavDropdown title="Characters" id="basic-nav-dropdown">
+                            <NavDropdown title="Characters" id="basic-nav-dropdown" >
                                 <NavDropdown.Item href="/characters">Characters</NavDropdown.Item>
                                 <NavDropdown.Item href="/character">NPC</NavDropdown.Item>
                                 <NavDropdown.Item href="/character">Players</NavDropdown.Item>
@@ -46,7 +46,7 @@ export default function Root() {
                             </NavDropdown>
 
 
-                            <NavDropdown title="Species" id="basic-nav-dropdown">
+                            <NavDropdown title="Species" id="basic-nav-dropdown" >
                                 <NavDropdown.Item href="/race">Mortal Races</NavDropdown.Item>
                                 <NavDropdown.Item href="/race">Creatures</NavDropdown.Item>
                                 <NavDropdown.Divider/>
@@ -70,7 +70,7 @@ export default function Root() {
                                 </NavDropdown.Item>
                             </NavDropdown>
 
-                            <NavDropdown title="Groups" id="basic-nav-dropdown">
+                            <NavDropdown title="Groups" id="basic-nav-dropdown" >
                                 <NavDropdown.Item href="/groups">Guilds</NavDropdown.Item>
                                 <NavDropdown.Item href="/groups">Magic schools</NavDropdown.Item>
                                 <NavDropdown.Item href="/groups">Traders</NavDropdown.Item>
@@ -85,7 +85,7 @@ export default function Root() {
                                 </NavDropdown.Item>
                             </NavDropdown>
 
-                            <NavDropdown title="Gods" id="basic-nav-dropdown">
+                            <NavDropdown title="Gods" id="basic-nav-dropdown" >
                                 <NavDropdown.Item href="/gods">Greater Deities</NavDropdown.Item>
                                 <NavDropdown.Item href="/gods">Deities</NavDropdown.Item>
                                 <NavDropdown.Item href="/gods">Lesser Deities</NavDropdown.Item>
@@ -97,7 +97,16 @@ export default function Root() {
                                 </NavDropdown.Item>
                             </NavDropdown>
 
-                            <NavDropdown title="Rules" id="basic-nav-dropdown">
+                            <NavDropdown title="Rules" id="basic-nav-dropdown" >
+                                <NavDropdown.Item href="/characters">Basics</NavDropdown.Item>
+                                <NavDropdown.Item href="/character">Classes</NavDropdown.Item>
+                                <NavDropdown.Item href="/character">Combat</NavDropdown.Item>
+                                <NavDropdown.Item href="/character">Magic</NavDropdown.Item>
+                                <NavDropdown.Item href="/character">Downtime</NavDropdown.Item>
+                                <NavDropdown.Divider/>
+                            </NavDropdown>
+
+                            <NavDropdown title="Randomiser" id="basic-nav-dropdown" >
                                 <NavDropdown.Item href="/characters">Basics</NavDropdown.Item>
                                 <NavDropdown.Item href="/character">Classes</NavDropdown.Item>
                                 <NavDropdown.Item href="/character">Combat</NavDropdown.Item>
@@ -106,6 +115,11 @@ export default function Root() {
                                 <NavDropdown.Divider/>
                             </NavDropdown>
                         </Nav>
+                    </Navbar.Collapse>
+                    <Navbar.Collapse className="justify-content-end">
+                        <Navbar.Text>
+                            Signed in as: <a href="#login">Samuel Pryce</a>
+                        </Navbar.Text>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
