@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
-export default function BasicDataInline({id, name, shortDescription}) {
+export default function BasicDataCardInline({id, name, shortDescription}) {
 
     return (
         <Col key={id} xxl={2} lg={3} md={4} sm={6} xs={12} className="m-1" >

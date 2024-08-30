@@ -3,9 +3,16 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import LoginModal from "./Pages/Login/LoginModal.tsx";
+
+
 
 
 export default function Root() {
+
+
+
+
 
     return (
         <>
@@ -47,10 +54,10 @@ export default function Root() {
 
 
                             <NavDropdown title="Species" id="basic-nav-dropdown" >
-                                <NavDropdown.Item href="/race">Mortal Races</NavDropdown.Item>
+                                <NavDropdown.Item href="/mortal">Mortal Races</NavDropdown.Item>
                                 <NavDropdown.Item href="/race">Creatures</NavDropdown.Item>
                                 <NavDropdown.Divider/>
-                                <NavDropdown.Item href="/race">
+                                <NavDropdown.Item href="/species-post">
                                     New Species
                                 </NavDropdown.Item>
                             </NavDropdown>
@@ -117,9 +124,7 @@ export default function Root() {
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Collapse className="justify-content-end">
-                        <Navbar.Text>
-                            Signed in as: <a href="#login">Samuel Pryce</a>
-                        </Navbar.Text>
+                        <LoginModal />
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

@@ -1,6 +1,6 @@
 import {useState} from "react";
 import Button from "react-bootstrap/Button";
-import useFetch from "../../../Functions/UseFetch.ts";
+import useFetch from "../../../Functions/UseFetch/UseFetchGet.ts";
 import Card from "react-bootstrap/Card";
 import {Row} from "reactstrap";
 
