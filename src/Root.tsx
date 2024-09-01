@@ -45,8 +45,8 @@ export default function Root() {
                             </NavDropdown>
                             <NavDropdown title="Characters" id="basic-nav-dropdown" >
                                 <NavDropdown.Item href="/characters">Characters</NavDropdown.Item>
-                                <NavDropdown.Item href="/character">NPC</NavDropdown.Item>
-                                <NavDropdown.Item href="/character">Players</NavDropdown.Item>
+                                <NavDropdown.Item href="/npc">NPC</NavDropdown.Item>
+                                <NavDropdown.Item href="/players">Players</NavDropdown.Item>
                                 <NavDropdown.Divider/>
                                 <NavDropdown.Item href="/character">
                                     New character
@@ -94,11 +94,8 @@ export default function Root() {
                             </NavDropdown>
 
                             <NavDropdown title="Gods" id="basic-nav-dropdown" >
-                                <NavDropdown.Item href="/gods">Greater Deities</NavDropdown.Item>
-                                <NavDropdown.Item href="/gods">Deities</NavDropdown.Item>
-                                <NavDropdown.Item href="/gods">Lesser Deities</NavDropdown.Item>
-                                <NavDropdown.Item href="/gods">Demigods</NavDropdown.Item>
-                                <NavDropdown.Item href="/gods">Other Deities</NavDropdown.Item>
+                                <NavDropdown.Item href="/gods">Gods</NavDropdown.Item>
+                                <NavDropdown.Item href="/gods">Pantheons</NavDropdown.Item>
                                 <NavDropdown.Divider/>
                                 <NavDropdown.Item href="/gods">
                                     New God
