@@ -25,6 +25,7 @@ export default function Root() {
                         <Nav className="me-auto" >
                             <Nav.Link href={`/home`}>Home</Nav.Link>
                             <Nav.Link href={`/campaigns`}>Campaigns</Nav.Link>
+                            <Nav.Link href={`/signup`}>Sign up</Nav.Link>
 
                             <NavDropdown title="The World" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="/world">History</NavDropdown.Item>
