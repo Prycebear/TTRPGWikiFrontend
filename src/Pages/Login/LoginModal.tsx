@@ -1,70 +1,95 @@
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import {useState} from "react";
-import Form from "react-bootstrap/Form";
+import LoginPage from "./LoginPage.tsx";
+import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
-
-
-
-export default function LoginModal(props){
-
+export default function LoginModal() {
     const [show, setShow] = useState(false);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate(); // For redirecting after successful login
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const[password, setPassword] = useState('');
+    const handleLogin = async (e:Event) => {
+        e.preventDefault();
 
-    const handleSubmit = async () =>{
-        props.setUsername === 'a'
-        if(props.username === 'a'){
-            props.setLoggedIn = true;
-            console.log(props.username)
+        try {
+            const response = await axios.post('http://localhost:8080/auth/signin',
+                {
+                    username, // Using state variable for the request body
+                    password
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    withCredentials: true
+                })
+
+            // Destructuring the response data and renaming 'username' to 'user'
+            const {accessToken, id, roles, tokenType, username: user} = response.data;
+
+            // Save the token and other data to localStorage
+            localStorage.setItem('authToken', accessToken);
+            localStorage.setItem('userId', id);
+            localStorage.setItem('userRoles', JSON.stringify(roles));
+            localStorage.setItem('tokenType', tokenType);
+            localStorage.setItem('username', user);
+
+            console.log(user)
+            console.log(tokenType)
+            console.log(accessToken)
+            console.log(roles)
+
+            alert('Logged in successfully!')
+            setUsername('');
+            setPassword('');
+            navigate('/home');
+        } catch (error) {
+            console.error('Login failed:', error);
+            alert('Login failed, try again!')
         }
-    }
-
+    };
 
     return (
         <>
-            <Button variant="secondary" onClick={handleShow}>
-                {props.loggedIn ? props.username : 'Log in'}
+            <Button variant="primary" onClick={handleShow}>
+                Log in
             </Button>
 
-            <Modal show={show} onHide={handleClose} centered>
+            <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Login page</Modal.Title>
+                    <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>
-                <Form>
-                    <Form.Group className="m-3" controlId="formBasicEmail">
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control
-                            type="username"
-                            placeholder="Enter username"
-                            value={props.username}
-                            onChange={(e) => props.setUsername(e.target.value)}
+                <form onSubmit={handleLogin}>
+                    <div>
+                        <label>Username:</label>
+                        <input
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                             required
                         />
-                        <Form.Text className="text-muted">
-
-                        </Form.Text>
-                    </Form.Group>
-
-                    {/*<Form.Group className="m-3" controlId="formBasicPassword">*/}
-                    {/*    <Form.Label>Password</Form.Label>*/}
-                    {/*    <Form.Control*/}
-                    {/*        type="password"*/}
-                    {/*        value={password}*/}
-                    {/*        placeholder="Password"*/}
-                    {/*        onChange={(e) => setPassword(e.target.value)}*/}
-                    {/*        required*/}
-                    {/*    />*/}
-                    {/*</Form.Group>*/}
-                    <Button className="m-3" variant="primary" type="submit" onClick={handleSubmit}>
-                        Submit
-                    </Button>
-                </Form>
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <button type="submit" onClick={handleClose}>Login</button>
+                </form>
                 <Modal.Footer>
-
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
                 </Modal.Footer>
             </Modal>
         </>

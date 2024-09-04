@@ -1,7 +1,7 @@
 
 import useFetch from "../../../Functions/UseFetch/UseFetchGet.ts";
 import {ButtonGroup, Row} from "reactstrap";
-import BasicDataInline from "../../BasicDataCards/BasicDataCardInline.tsx";
+import BasicDataInline from "../../BasicDataCards/CharacterDataInline.tsx";
 
 export default function ContinentCards(){
 

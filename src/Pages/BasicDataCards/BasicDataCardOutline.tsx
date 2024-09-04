@@ -1,6 +1,6 @@
 // import {Row} from "reactstrap";
 // import useFetch from "../../Functions/UseFetchGet.ts";
-// import BasicDataInline from "./BasicDataCardInline.tsx";
+// import BasicDataInline from "./CharacterDataInline.tsx";
 
 // interface Species {
 //     speciesId: number;

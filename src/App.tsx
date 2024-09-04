@@ -14,6 +14,7 @@ import CharacterCards from "./Pages/DataPages/Character/CharacterCards.tsx";
 import MortalRacesCards from "./Pages/DataPages/Species/MortalRacesCards.tsx";
 import PostNewSpecies from "./Pages/DataPages/Species/PostNewSpecies.tsx";
 import SignUpPage from "./Pages/Login/SignUpPage.tsx";
+import WeaponCards from "./Pages/DataPages/Items/WeaponCards.tsx";
 
 
 const router = createBrowserRouter([
@@ -74,16 +75,9 @@ const router = createBrowserRouter([
             }
             ,
             {
-                path: "/items",
-                element: <MortalRacesCards/>,
+                path: "/weapons",
+                element: <WeaponCards/>,
                 errorElement: <ErrorPage/>,
-                children: [
-                    {
-                        path: "weapon",
-                        element: <MortalRacesCards/>,
-                        errorElement: <ErrorPage/>,
-                    }
-                ]
             }
             ,
             {

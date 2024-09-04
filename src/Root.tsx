@@ -64,14 +64,14 @@ export default function Root() {
                             </NavDropdown>
 
                             <NavDropdown title="Items" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="/items/weapon">Weapons</NavDropdown.Item>
-                                <NavDropdown.Item href="/items/weapon">Armour</NavDropdown.Item>
-                                <NavDropdown.Item href="/items/weapon">Tools</NavDropdown.Item>
-                                <NavDropdown.Item href="/items/weapon">Plants</NavDropdown.Item>
-                                <NavDropdown.Item href="/items/weapon">Books</NavDropdown.Item>
-                                <NavDropdown.Item href="/items/weapon">Metals</NavDropdown.Item>
-                                <NavDropdown.Item href="/items/weapon">Trinkets</NavDropdown.Item>
-                                <NavDropdown.Item href="/items/weapon">Misc</NavDropdown.Item>
+                                <NavDropdown.Item href="/weapons">Weapons</NavDropdown.Item>
+                                <NavDropdown.Item href="/armour">Armour</NavDropdown.Item>
+                                <NavDropdown.Item href="/tools">Tools</NavDropdown.Item>
+                                <NavDropdown.Item href="/plants">Plants</NavDropdown.Item>
+                                <NavDropdown.Item href="/books">Books</NavDropdown.Item>
+                                <NavDropdown.Item href="/trinkets">Trinkets</NavDropdown.Item>
+                                <NavDropdown.Item href="/metals">Metals</NavDropdown.Item>
+                                <NavDropdown.Item href="/misc">Misc</NavDropdown.Item>
                                 <NavDropdown.Divider/>
                                 <NavDropdown.Item href="/items/weapon">
                                     New item

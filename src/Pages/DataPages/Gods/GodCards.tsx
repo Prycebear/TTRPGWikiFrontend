@@ -1,8 +1,8 @@
 import useFetch from "../../../Functions/UseFetch/UseFetchGet.ts";
 import {ButtonGroup, Row} from "reactstrap";
-import BasicDataInline from "../../BasicDataCards/BasicDataCardInline.tsx";
 import Button from "react-bootstrap/Button";
 import {useState} from "react";
+import CharacterDataInline from "../../BasicDataCards/CharacterDataInline.tsx";
 
 export default function GodCards(){
 
@@ -41,7 +41,7 @@ export default function GodCards(){
             <Row className="justify-content-md-center" xxl={2} lg={3} md={4} sm={6} xs={12}>
                 {godCard && godCard.map(item => {
                         return (
-                            <BasicDataInline id={item.godsId} name={item.godsName} species={item.godsDomain}
+                            <CharacterDataInline id={item.godsId} name={item.godsName} species={item.godsDomain}
                                              shortDescription={item.godLevel} />
                         )
                     }
