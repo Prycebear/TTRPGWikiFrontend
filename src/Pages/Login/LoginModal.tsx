@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import LoginPage from "./LoginPage.tsx";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 
@@ -14,7 +13,11 @@ export default function LoginModal() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const handleLogin = async (e:Event) => {
+    function refreshPage() {
+        window.location.reload(false);
+    }
+
+    const handleLogin = async (e: Event): Promise<any> => {
         e.preventDefault();
 
         try {
@@ -49,6 +52,7 @@ export default function LoginModal() {
             setUsername('');
             setPassword('');
             navigate('/home');
+            refreshPage();
         } catch (error) {
             console.error('Login failed:', error);
             alert('Login failed, try again!')

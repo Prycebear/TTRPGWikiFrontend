@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import LoginModal from "./Pages/Login/LoginModal.tsx";
+import {useState} from "react";
 
 
 
@@ -11,6 +12,16 @@ import LoginModal from "./Pages/Login/LoginModal.tsx";
 export default function Root() {
 
 
+    const [loggedInUser, setLoggedInUser] = useState( localStorage.getItem('username'));
+ function LoggedInAreWe(){
+     if(!loggedInUser){
+         return(
+             <LoginModal/>
+         )
+     }else{
+         return <h3>{loggedInUser}</h3>
+     }
+ }
 
 
 
@@ -122,7 +133,7 @@ export default function Root() {
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Collapse className="justify-content-end">
-                        <LoginModal />
+                        <LoggedInAreWe />
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
