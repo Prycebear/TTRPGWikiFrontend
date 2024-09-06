@@ -3,6 +3,9 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
+import Form from 'react-bootstrap/Form';
+
+
 
 export default function LoginModal() {
     const [show, setShow] = useState(false);
@@ -14,10 +17,13 @@ export default function LoginModal() {
     const handleShow = () => setShow(true);
 
     function refreshPage() {
+        // @ts-expect-error just works
         window.location.reload(false);
     }
 
-    const handleLogin = async (e: Event): Promise<any> => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    const handleLogin = async (e: Event): Promise<never> => {
         e.preventDefault();
 
         try {
@@ -58,7 +64,7 @@ export default function LoginModal() {
             alert('Login failed, try again!')
         }
     };
-
+    
     return (
         <>
             <Button variant="primary" onClick={handleShow}>
@@ -67,29 +73,29 @@ export default function LoginModal() {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>Login</Modal.Title>
                 </Modal.Header>
-                <form onSubmit={handleLogin}>
-                    <div>
-                        <label>Username:</label>
-                        <input
+                <Form onSubmit={handleLogin}>
+                    <div style={{margin:10}}>
+                        <Form.Label>Username:</Form.Label>
+                        <Form.Control
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             required
                         />
                     </div>
-                    <div>
-                        <label>Password:</label>
-                        <input
+                    <div style={{margin:10}}>
+                        <Form.Label>Password:</Form.Label>
+                        <Form.Control
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
                     </div>
-                    <button type="submit" onClick={handleClose}>Login</button>
-                </form>
+                    <Button type="submit" style={{margin:10}} onClick={handleClose}>Login</Button>
+                </Form>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close

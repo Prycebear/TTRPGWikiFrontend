@@ -4,15 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import LoginModal from "./Pages/Login/LoginModal.tsx";
-import {useState} from "react";
-
-
-
 
 export default function Root() {
 
 
-    const [loggedInUser, setLoggedInUser] = useState( localStorage.getItem('username'));
+    const loggedInUser =( localStorage.getItem('username'));
  function LoggedInAreWe(){
      if(!loggedInUser){
          return(
@@ -28,7 +24,7 @@ export default function Root() {
     return (
         <>
             <div className="route-outlet" style={{zIndex: '100'}}>
-            <Navbar expand="xl" className="bg-body-tertiary" style={{position: "sticky", zIndex: '100'}}   >
+            <Navbar expand="xl" className="bg-body-tertiary"  fixed={'top'}  >
                 <Container>
                     <Navbar.Brand href="/home">Avorlion</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>

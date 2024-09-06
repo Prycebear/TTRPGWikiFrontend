@@ -1,7 +1,6 @@
 import useFetch from "../../../Functions/UseFetch/UseFetchGet.ts";
 import {Row} from "reactstrap";
-import BasicDataInline from "../../BasicDataCards/CharacterDataInline.tsx";
-import React from "react";
+import BasicDataInline from "../../../Components/Cards/CharacterDataInline.tsx";
 
 
 interface Species {
@@ -14,7 +13,11 @@ interface Species {
 export default function MortalRacesCards() {
 
     const [speciesCardUrls] = useFetch('http://localhost:8080/species/all/card');
-    const speciesCard:Species[] = speciesCardUrls;
+    const speciesCard:Species[] = speciesCardUrls.filter(checkNull).sort((a:Species,b:Species)=>a.speciesName.localeCompare(b.speciesName.toString()));
+
+    function checkNull(speciesCardUrl:Species){
+        return speciesCardUrl.speciesName;
+    }
 
 
 

@@ -1,6 +1,6 @@
 import useFetch from "../../../Functions/UseFetch/UseFetchGet.ts";
 import {Row} from "reactstrap";
-import BasicDataInline from "../../BasicDataCards/CharacterDataInline.tsx";
+import BasicDataInline from "../../../Components/Cards/CharacterDataInline.tsx";
 
 
 export default function CharacterCards() {

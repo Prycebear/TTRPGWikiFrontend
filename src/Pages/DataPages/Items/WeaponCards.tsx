@@ -1,6 +1,6 @@
 import useFetch from "../../../Functions/UseFetch/UseFetchGet.ts";
 import {ButtonGroup, Row} from "reactstrap";
-import WeaponDataInline from "../../BasicDataCards/WeaponDataInline.tsx";
+import WeaponDataInline from "../../../Components/Cards/WeaponDataInline.tsx";
 
 export default function WeaponCards() {
 

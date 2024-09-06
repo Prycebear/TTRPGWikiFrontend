@@ -2,7 +2,7 @@ import useFetch from "../../../Functions/UseFetch/UseFetchGet.ts";
 import {ButtonGroup, Row} from "reactstrap";
 import Button from "react-bootstrap/Button";
 import {useState} from "react";
-import CharacterDataInline from "../../BasicDataCards/CharacterDataInline.tsx";
+import CharacterDataInline from "../../../Components/Cards/CharacterDataInline.tsx";
 
 export default function GodCards(){
 
