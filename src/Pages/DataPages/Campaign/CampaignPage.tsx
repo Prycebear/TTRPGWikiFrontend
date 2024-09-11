@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import useFetch from "../../../Functions/UseFetch/UseFetchGet.ts";
 import Card from "react-bootstrap/Card";
 import {Row} from "reactstrap";
+import {Link} from "react-router-dom";
 
 export default function CampaignPage(){
 
@@ -44,13 +45,15 @@ export default function CampaignPage(){
                                 campaignData.map((item) => {
                                     // @ts-expect-error items work as intended.
                                     return <div className='cardStyle' style={{margin: '0.5rem', width: '15%'}} key={item.campaignId}>
-                                        <Card>
+                                        <Card >
+                                            <Link to={'http://localhost:5173/sessions'} style={{textDecoration: 'none' , textDecorationColor: 'white'}}>
                                             <Card.Img variant="top" src="https://static.wikia.nocookie.net/garfield/images/f/fb/Garfieldshow.jpg.jpg/revision/latest?cb=20240429182216"/>
                                             <Card.Body>
                                                 {/*// @ts-expect-error items work as intended.*/}
-                                                <Card.Title d-flex align-items-center>{item.campaignName}</Card.Title>
+                                                <Card.Title d-flex align-items-center style={{textDecoration: 'none' , color: 'white'}}>{item.campaignName}</Card.Title>
                                                 <Button variant="dark" size={"sm"}>Go somewhere</Button>
                                             </Card.Body>
+                                            </Link>
                                         </Card>
                                     </div>
                                 })}

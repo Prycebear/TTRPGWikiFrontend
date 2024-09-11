@@ -15,6 +15,7 @@ import MortalRacesCards from "./Pages/DataPages/Species/MortalRacesCards.tsx";
 import PostNewSpecies from "./Pages/DataPages/Species/PostNewSpecies.tsx";
 import SignUpPage from "./Pages/Login/SignUpPage.tsx";
 import WeaponCards from "./Pages/DataPages/Items/WeaponCards.tsx";
+import SessionPage from "./Pages/DataPages/Campaign/SessionPage.tsx";
 
 
 const router = createBrowserRouter([
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
             {
                 path: "/campaigns",
                 element: <CampaignPage/>,
+                errorElement: <ErrorPage/>,
+            },
+            {
+                path: "/sessions",
+                element: <SessionPage/>,
                 errorElement: <ErrorPage/>,
             },
             {

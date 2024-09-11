@@ -25,11 +25,13 @@ export default function PostNewSpecies(){
     const handleSubmit = async (e) => {
         e.preventDefault(); // Prevent page refresh
 
-        // Define custom headers
+        const token = localStorage.getItem('authToken');
+        if (token === null){
+            alert('Youre not logged in.')
+        }
         const headers = {
             'Content-Type': 'application/json',
-            // 'Authorization': 'Bearer your_token_here', // Example: Authorization token
-            // 'Custom-Header': 'custom_value' // Any other custom header you need
+            'Authorization': `Bearer ${token}`
         };
 
         try {
@@ -51,7 +53,7 @@ export default function PostNewSpecies(){
 
     return (
         <Container>
-            <h1 className="my-4">Submit Your Data</h1>
+            <h1 className="my-4">Post new species</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formName" className="mb-3">
                     <Form.Label>Name</Form.Label>

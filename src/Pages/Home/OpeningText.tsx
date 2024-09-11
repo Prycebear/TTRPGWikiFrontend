@@ -27,7 +27,7 @@ export default function OpeningText() {
                 storm, whispers of an ancient prophecy stir once more—the fate of Avorlion hangs in the balance, and the
                 winds of change are rising.</p>
             <br/>
-            <Image src={'public/Images/FantasyMap.png'} fluid/>
+            <Image src={'public/Images/Avorlion.png'} fluid/>
             <br/>
             <br/>
             <p>But Avorlion is not just a land of wonders and mysteries—it is a world steeped in history, shaped by
